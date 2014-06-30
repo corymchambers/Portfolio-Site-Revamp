@@ -1,0 +1,98 @@
+<!doctype html>
+<head>
+<link rel="stylesheet" href="css/styles.css">
+<link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+	<div class="wrapper">
+
+		<header>
+
+			<div id="main" class="duplicate">
+				
+				<ul class="nav">
+					<li><a href="" title="home">Home</a></li>
+					<li><a href="" title="blog">Blog</a></li>
+					<li><a href="" title="portfolio">Portfolio</a></li>
+					<li><a href="" title="contact">Contact</a></li>
+				</ul>
+				
+			</div>
+			<div id="stickyContent"></div>
+		</header>
+
+		<nav>
+
+		</nav>
+
+		<div id="slide1">
+			<div class="content">
+				here is some stuff
+			</div> 
+	    </div> 
+
+		<div id="slide2">
+			<div class="content" >
+	            some more stuff
+			</div> 
+		</div> 
+	    
+		
+		
+	   <div id="slide3">
+			<div class="content">
+				   stuff
+			</div> 
+	    </div> 
+		
+		
+		<div id="slide4">
+			<ul class="flex-container">
+			  <li class="flex-item"><img src="images/girl-med-1_crop.jpg"></li>
+			  <li class="flex-item"><img src="images/guy-med_crop.jpg"></li>
+			  <li class="flex-item"><img src="images/girl-med-2_crop.jpg"></li>
+			  <li class="flex-item"><img src="images/girl-cello-med_crop.jpg"></li>
+			  <li class="flex-item"><img src="images/girl-lipstick-med_crop.jpg"></li>
+			  <li class="flex-item"><img src="images/girl-hat-med_crop.jpg"></li>
+			</ul>
+	    </div> 
+		
+		<footer>
+			<img src="images/downtown.jpg">
+		</footer>
+
+	</div>
+	 
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+		<script>
+	   
+	<!----- JQUERY FOR SLIDING NAVIGATION --->   
+	$(document).ready(function() {
+	  $('a[href*=#]').each(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+	    && location.hostname == this.hostname
+	    && this.hash.replace(/#/,'') ) {
+	      var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
+	      var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+	       if ($target) {
+	         var targetOffset = $target.offset().top;
+
+	<!----- JQUERY CLICK FUNCTION REMOVE AND ADD CLASS "ACTIVE" + SCROLL TO THE #DIV--->   
+	         $(this).click(function() {
+	            $("#nav li a").removeClass("active");
+	            $(this).addClass('active');
+	           $('html, body').animate({scrollTop: targetOffset}, 1000);
+	           return false;
+	         });
+	      }
+	    }
+	  });
+
+	});
+
+
+	</script>
+
+</body>
